@@ -1,0 +1,92 @@
+
+/* ------------------ */
+/* Custom properties  */
+/* ------------------ */
+
+:root {
+
+    /* colors */
+    --color-text-primary: #1c1a18;
+    --color-text-secondary: #f5efeb;
+    --color-text-inverted: #ffffff;
+    --color-background-primary: #fdfbf9;
+    --color-background-inverted: #201445;
+    --color-brand: #4b2aad;
+    --color-light-blue: #9484c6;
+
+    /* font-families */
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-sans-normal: "Barlow", sans-serif;
+
+    /* font-sizes */
+    --fs-800: 6.25rem;    /* 100 */
+    --fs-700: 3.5rem;     /* 56 */
+    --fs-600: 2rem;       /* 32 */
+    --fs-500: 1.75rem;    /* 28 */
+    --fs-400: 1.125rem;   /* 18 */
+    --fs-300: 1rem;       /* 16 */
+    --fs-200: 0.875rem;   /* 14 */
+
+    /* letter spacing */
+    --ls-300: 4.72px;
+    --ls-200: 2.36px;
+}
+
+
+/* ------------------ */
+/* Reset              */
+/* ------------------ */
+  
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+  
+ 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+  
+  
+body {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-300);
+    color: hsl(var(--color-text-primary));
+    background-color: hsl(var(--color-background-primary));
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+  
+  
+img, 
+picture {
+    max-width: 100%;
+    display: block;
+} 
+  
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
