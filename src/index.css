@@ -7,30 +7,63 @@
 
     /* colors */
     --color-text-primary: #1c1a18;
-    --color-text-secondary: #f5efeb;
+    --color-text-secondary: #5f5957;
     --color-text-inverted: #ffffff;
     --color-background-primary: #fdfbf9;
     --color-background-inverted: #201445;
-    --color-brand: #4b2aad;
+    --color-brand: 	255 61% 42%;                               /* HEX #4b2aad */
     --color-light-blue: #9484c6;
 
+    /* icons */
+    /* outline     #857366 */
+    /* background  #F2EAE3 */
+
     /* font-families */
-    --ff-serif: "Bellefair", serif;
+    /* --ff-serif: "Bellefair", serif; */
+    --ff-serif: "Newsreader", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
 
     /* font-sizes */
-    --fs-800: 6.25rem;    /* 100 */
-    --fs-700: 3.5rem;     /* 56 */
-    --fs-600: 2rem;       /* 32 */
-    --fs-500: 1.75rem;    /* 28 */
-    --fs-400: 1.125rem;   /* 18 */
-    --fs-300: 1rem;       /* 16 */
-    --fs-200: 0.875rem;   /* 14 */
+    --fs-800: 3.5rem;       /* 56 */
+    --fs-700: 1.5rem;       /* 24 */
+    --fs-600: 1.25rem;      /* 20 */
+    --fs-500: 1rem;         /* 16 */
+    --fs-400: 0.9375rem;    /* 15 */
+    --fs-300: 0.875rem;;    /* 14 */
+    --fs-200: 0.875rem;     /* 14 */
 
     /* letter spacing */
     --ls-300: 4.72px;
     --ls-200: 2.36px;
+}
+
+/* tablet */
+@media(min-width: 35rem) {
+    :root {
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+
+        --ls-300: 3.38px;
+        --ls-200: 2.7px;
+    }
+}
+  
+/* desktop */
+@media(min-width: 45rem) {
+    :root {
+        --fs-800: 6.25rem;    /* 100 */
+        --fs-700: 3.5rem;     /* 56 */
+        --fs-600: 2rem;       /* 32 */
+        --fs-500: 1.75rem;    /* 28 */
+        --fs-400: 1.125rem;   /* 18 */
+        --fs-300: 1rem;       /* 16 */
+        --fs-200: 0.875rem;   /* 14 */
+
+        --ls-300: 4.72px;
+    }
 }
 
 
@@ -71,15 +104,17 @@ p {
 body {
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-300);
-    color: hsl(var(--color-text-primary));
-    background-color: hsl(var(--color-background-primary));
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
     line-height: 1.5;
     overflow-x: hidden;
+    height: 100vh;
 }
   
   
 img, 
-picture {
+picture,
+svg {
     max-width: 100%;
     display: block;
 } 
@@ -89,4 +124,206 @@ button,
 textarea,
 select {
     font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+/* ------------------ */
+/* Typography classes */
+/* ------------------ */
+
+.h1-regular-text {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-700);
+    font-weight: 600;
+}
+
+.h2-regular-text {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-600);
+    font-weight: 600;   
+}
+
+.h3-regular-text {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-500);
+    font-weight: 600;   
+}
+
+.h4-regular-text {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-400);
+    font-weight: 600;   
+}
+
+.p3-regular-text {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    font-weight: 400;
+}
+
+.p3-medium-text {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    font-weight: 600;
+}
+
+.p4-regular-text {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-300);
+    font-weight: 400;
+}
+
+.p4-medium-text {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-300);
+    font-weight: 600;
+}
+
+/* ------------------ */
+/* Color classes      */
+/* ------------------ */
+
+.color-text-primary {
+    color: var(--color-text-primary);
+}
+
+.color-text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.color-text-inverted {
+    color: var(--color-text-inverted)
+}
+
+.color-text-brand {
+    color: var(--color-brand);
+}
+
+.color-text-light {
+    color: var(--color-light-blue);
+}
+
+.color-background-primary {
+    background-color: var(--color-background-primary)
+}
+
+.color-background-inverted {
+    background-color: var(--color-background-inverted);
+}
+
+.color-background-brand {
+    background-color: var(--color-brand);
+}
+
+.color-background-light {
+    background-color: var(--color-light-blue);
+}
+
+
+/* ------------------ */
+/* Utility classes    */
+/* ------------------ */
+
+.skip-to-content {
+    position: absolute;
+    background: var(--color-light-blue);
+    color: var(--color-text-primary);
+    padding: .5em 1em;
+    margin-inline: auto;
+    z-index: 1;
+
+    /* too far away to acces */
+    transform: translateY(-10000px);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.grid-container {
+    /* mobile one colum */
+    text-align: center;
+    display: grid;
+    place-items: center;
+    row-gap: 10%;
+    padding-inline: 1rem;
+}
+
+@media (min-width: 45rem) {
+    .grid-container {
+        text-align: left;
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 80rem) minmax(1rem, 1fr);
+    }
+
+    .grid-container > *:first-child {
+        grid-column: 2;
+    }
+}
+
+.btn-primary {
+    color: var(--color-text-inverted);
+    background-color: hsl(var(--color-brand));
+    padding: 8px 12px;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: hsl(var(--color-brand)/.75);
+}
+
+.btn-ghost {
+    color: var(--color-text-primary);
+    background-color: transparent;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform ease-in-out 0.3;
+}
+
+.btn-ghost:hover {
+    transform: scale(1.01);
+}
+
+.btn-inverted {
+    color: var(--color-text-inverted);
+    background-color: var(--color-light-blue);
+    padding: 8px 12px;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;    
+}
+
+.btn-inverted:hover {
+    background-color: hsl(var(--color-brand));    
+}
+
+.header-fixed {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 2;
+    background-color: var(--color-background-primary);
 }

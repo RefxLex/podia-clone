@@ -1,10 +1,11 @@
-import { FC, PropsWithChildren } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { FC } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { routes } from './routes.ts';
+import { MainLayout } from '../features/mainLayout/MainLayout.tsx';
+import { HomePage } from '../pages/HomePage.tsx';
+import { ContactsPage } from '../pages/ContactsPage.tsx';
 
-import { BusinessMainPage, ScopeOfServicesLayout } from '../pages';
-import { MainLayout, ServicePeriodsPage } from '../features';
 
 export const Navigation = () => {
   return (
@@ -16,12 +17,12 @@ export const Navigation = () => {
 
 const NavigationRouting: FC = () => {
   return (
-    <Router>
+    <Routes>
       <Route element={<MainLayout />}>
-        <Route path={routes.Home} element={<Navigate to={routes.Business} replace />} />
-        <Route path={routes.Account} element={<div>Account</div>} />
-        <Route path="*" element={<Navigate to={routes.Home} />} />
+        <Route path={routes.Home} element={<HomePage/>}/>
+        <Route path={routes.Contacts} element={<ContactsPage/>} />
+        <Route path="*" element={<div>NOT FOUND</div>} />
       </Route>
-    </Router>
+    </Routes>
   );
 };
