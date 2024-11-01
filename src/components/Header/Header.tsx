@@ -2,7 +2,6 @@ import { FC } from 'react'
 import styled from 'styled-components'
 import { routes } from '../../navigation';
 import { useNavigate } from 'react-router-dom';
-import { NavMobile} from './NavMobile';
 
 interface Props {
     fixedHeader?: boolean
@@ -41,15 +40,6 @@ export const Header: FC<Props> = ({fixedHeader}) => {
             display: none        
         }
     `;
-
-    const NavMobileWrapper = styled.div`
-
-        display: none;
-
-        @media (max-width: 920px) {
-            display: block        
-        } 
-    `
 
     const NavList = styled.ul`
         display: flex;
