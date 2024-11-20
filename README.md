@@ -1,5 +1,9 @@
 # podia-clone
-A clone of podia website
+
+Клон сайта podia с некоторыми изменениями. Выполнен по шаблону с сайта https://www.frontendpractice.com/projects/podia.
+Репозиторий серверной части тут - https://github.com/RefxLex/podia_server
+
+Сайт можно посмотреть тут - http:// 130.193.55.10/podia
 
 1. Логин в Docker
 ```shell script
@@ -15,9 +19,3 @@ docker build --no-cache --progress=plain -t refxlexj/podia-clone:1.0.0 .
 ```shell script
 docker push refxlexj/podia-clone:1.0.0
 ```
-
-Локальный запуск 
-```shell script
-docker run -d -p 81:80 --name podia-clone -e BASE_URL=http://localhost:8081 refxlexj/podia-clone:1.0.0
-```
-
