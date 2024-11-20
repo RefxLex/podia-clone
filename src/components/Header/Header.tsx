@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import styled from 'styled-components'
-import { routes } from '../../navigation';
+import { routes, addPublicPath } from '../../navigation';
 import { useNavigate } from 'react-router-dom';
+import { PUBLIC_PATH } from '../../environments';
 
 interface Props {
     fixedHeader?: boolean
@@ -75,7 +76,7 @@ export const Header: FC<Props> = ({fixedHeader}) => {
             <HeaderContent className='header__content'>
                 <a href="#main" className="header__skip-nav skip-to-content">Skip to content</a>
                 <div className="header__logo">
-                    <a href="/">
+                    <a href={PUBLIC_PATH}>
                         <span className="sr-only">Podia</span>
                         <Logo width="600" height="208" viewBox="0 0 600 208" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M426.204 23.724C426.204 10.4634 436.335 0.00793457 449.184 0.00793457C462.528 0.00793457 473.891 10.4634 473.891 23.724C473.891 37.4946 462.528 47.6951 449.184 47.6951C436.335 47.6951 426.204 37.4946 426.204 23.724Z" fill="currentColor"></path>
@@ -110,8 +111,13 @@ export const Header: FC<Props> = ({fixedHeader}) => {
                     <button className="header__login-btn btn-ghost p4-regular-text" tabIndex={0} role='button'>
                         <span className="link">Login</span>
                     </button>
-                    <ContactBtn className="header__contact-btn btn-primary p4-medium-text" tabIndex={0} role='button'>
-                        <span className="btn__text" onClick={() => navigate(routes.Contacts)}>Contact us</span>
+                    <ContactBtn 
+                        className="header__contact-btn btn-primary p4-medium-text" 
+                        tabIndex={0} 
+                        role='button' 
+                        onClick={() => navigate(addPublicPath(routes.Contacts))}
+                    >
+                        <span className="btn__text">Contact us</span>
                     </ContactBtn>
                 </HeaderButtons>
             </HeaderContent>

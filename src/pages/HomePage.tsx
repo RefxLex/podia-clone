@@ -10,7 +10,7 @@ import iconDollar from '../assets/icons8-dollar-24.png';
 import iconPuzzle from '../assets/icons8-puzzle-24.png';
 import iconOptions from '../assets/icons8-options-24.png';
 import { useNavigate } from "react-router-dom";
-import { routes } from "../navigation";
+import { routes, addPublicPath } from "../navigation";
 
 
 export const HomePage: FC = () => {
@@ -148,7 +148,7 @@ export const HomePage: FC = () => {
                         />
                     </CardsWrapper>
                     <BtnWrapper className="cards-section__btn-wrapper cards-section__btn-wrapper_margin-top">
-                        <button className="cards-section__contact-btn btn-primary p4-medium-text" onClick={() => navigate(routes.Contacts)}>
+                        <button className="cards-section__contact-btn btn-primary p4-medium-text" onClick={() => navigate(addPublicPath(routes.Contacts))}>
                             Contact us
                         </button>                        
                     </BtnWrapper>
@@ -160,7 +160,7 @@ export const HomePage: FC = () => {
                         sell digital products, and build online communities.
                     </ActionSectionText>
                     <BtnWrapper className="action-section__btn-wrapper">
-                        <button className="action-section__button btn-inverted p4-medium-text" onClick={() => navigate(routes.Contacts)}>
+                        <button className="action-section__button btn-inverted p4-medium-text" onClick={() => navigate(addPublicPath(routes.Contacts))}>
                             Contact us
                         </button>
                     </BtnWrapper>

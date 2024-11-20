@@ -4,7 +4,8 @@ COPY . .
 RUN npm install && npm run build
 
 FROM nginx
-COPY --from=0 /podia-clone/dist /var/www/html
+# PUBLIC_PATH=/podia/
+COPY --from=0 /podia-clone/dist /var/www/html/podia
 COPY --from=0 /podia-clone/nginx.conf /etc/nginx/nginx.conf
 
 COPY entrypoint.sh /entrypoint.sh
